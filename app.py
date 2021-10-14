@@ -1,5 +1,6 @@
 import re
 from peewee import *
+from dotenv import load_dotenv
 
 load_dotenv()
 regex = r"postgres://([\w_]{2,20}):([^@]{2,80})@([^:]{2,80}):5432/([\w_]{2,20})"
