@@ -28,9 +28,9 @@ except peewee.OperationalError:
     print("MessageLog table already exists!")
 
 
-for cls in globals().values():
-    if type(cls) == peewee.BaseModel:
-        try:
-            cls.create_table()
-        except peewee.OperationalError as e:
-            print(e)
+# for cls in globals().values():
+#     if type(cls) == peewee.BaseModel:
+#         try:
+#             cls.create_table()
+#         except peewee.OperationalError as e:
+#             print(e)
