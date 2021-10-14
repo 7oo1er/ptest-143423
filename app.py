@@ -22,7 +22,7 @@ class event_log(BaseModel):
 
 
 try:
-    event_log.create_table(safe=True)
+    event_log.create_table()
     print("MessageLog table created!")
 except peewee.OperationalError:
     print("MessageLog table already exists!")
