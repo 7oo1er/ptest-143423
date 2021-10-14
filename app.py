@@ -1,8 +1,10 @@
+import os
 import re
 from peewee import *
 from dotenv import load_dotenv
 
 load_dotenv()
+DATABASE_URL = os.getenv('DATABASE_URL')
 regex = r"postgres://([\w_]{2,20}):([^@]{2,80})@([^:]{2,80}):5432/([\w_]{2,20})"
 match = re.search(regex, DATABASE_URL)
 db_user, db_password, db_url, db_base = match[1], match[2], match[3], match[4]
