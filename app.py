@@ -1,6 +1,7 @@
 import os
 import re
 from peewee import *
+import peewee
 from dotenv import load_dotenv
 
 load_dotenv()
