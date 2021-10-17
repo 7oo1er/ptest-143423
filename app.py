@@ -4,7 +4,11 @@ import re
 import peewee
 from dotenv import load_dotenv
 from datetime import datetime
+import random
+import string
 
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
 
 load_dotenv()
 DATABASE_URL = os.getenv('DATABASE_URL')
@@ -31,6 +35,7 @@ except peewee.OperationalError:
 
 now = datetime.now()
 today = now.strftime("%H%M%S")
+today = today + "_" + id_generator()
 newrecord = (event_log.insert(d_id=today).execute())
 
 # for cls in globals().values():
